@@ -27,6 +27,7 @@ double doWalk(int maxLen)
 			continue;
 		}
 	}
+	//std::cout << x << "\t" << y << "\t" << maxlen << std::endl;
 	return (sqrt(x*x+y*y));
 }
 
@@ -35,9 +36,10 @@ int main(int argc, char **argv)
 	int i, j;
 	double dist=0;
 	double tries=10000;
-	int maxSteps=1000;
+	int maxSteps=5000;
 	for (j=0; j<=maxSteps; j++) {
 		//srandom(1);
+		dist=0;
 		for (i=0; i<tries; i++) {
 			dist+=doWalk(j);
 			//std::cout << doWalk(10) << std::endl;
