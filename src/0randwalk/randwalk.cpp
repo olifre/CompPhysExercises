@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 	int i, j;
 	double dist=0;
 	double tries=10000;
-	int maxSteps=5000;
+	int maxSteps=500;
 	for (j=0; j<=maxSteps; j++) {
 		//srandom(1);
 		dist=0;
