@@ -3,7 +3,7 @@ project(computational)
 
 include_directories(${ROOT_INCLUDES})
 
-SET(ROOTSYS "/usr/")
+SET(ENV{ROOTSYS} "/usr/")
 SET(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 set(LIBS z m gobject-2.0 sigc-2.0 stdc++  ccext2 ccgnu2 dl rt )
@@ -19,3 +19,4 @@ endif(NOT ROOT_FOUND)
 add_subdirectory(0randwalk)
 add_subdirectory(1standnorm)
 add_subdirectory(2standnormroot)
+add_subdirectory(3randuroot)
