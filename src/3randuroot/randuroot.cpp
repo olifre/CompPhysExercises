@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
@@ -25,16 +26,19 @@ int main(int argc, char **argv) {
     return -1;
   } else { 
     //std::cout << argv[0] << std::endl;
-    a = atoi(argv[1]);
-    m = atoi(argv[2]);
-    num = atoi(argv[3]);
+    a = atol(argv[1]);
+    m = atol(argv[2]);
+    num = atol(argv[3]);
     std::cout << "Using a: " << a << std::endl;
     std::cout << "Using m: " << m << std::endl;
     std::cout << "Generating " << num << " points." << std::endl;
   }
 
   f = new TFile("randoms.root","NEW");
-  
+
+  std::ofstream f2;
+  f2.open("randoms.dat" ) ;
+
   tree = new TTree("srtree","RANDU() points");
   
   tree->Branch("randnumx",&randx,"randx/D");
@@ -50,9 +54,11 @@ int main(int argc, char **argv) {
     randy/=m;
     randz/=m;
     tree->Fill();
+    f2 << randx << "\t" << randy << "\t" << randz << std::endl;
     num--;
   } while (num != 0);
   tree->Write();
   f->Close();
+  f2.close();
   return 0;
 }
