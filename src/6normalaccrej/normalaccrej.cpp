@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
 
   f = new TFile("randoms.root","NEW");
   
-  tree = new TTree("bmrand","Box-Muller distribution");
+  tree = new TTree("accrej","Sample by Accept-Reject Algorithm");
   
   tree->Branch("randz1",&randz1,"randz1/D");
   tree->Branch("randz2",&randz2,"randz2/D");
@@ -28,12 +28,11 @@ int main(int argc, char **argv) {
   f2.open("randoms.dat" ) ;
   
   do {
-    randz1r=(1.0*random()/(RAND_MAX));
-    randz2r=(1.0*random()/(RAND_MAX));
-
-    randz1=sqrt(-2*log(randz1r))*cos(2*M_PI*randz2r);
-    randz2=sqrt(-2*log(randz1r))*sin(2*M_PI*randz2r);
-
+    do {
+      randz1=(2.0*random()/(RAND_MAX))-1;
+      randz2=(2.0*random()/(RAND_MAX))-1;
+    } while (randz2 > exp(-1./2.*(randz1-1)*(randz1-1)));
+	
     f2 << randz1 << "\t" << randz2 << std::endl;
 
     tree->Fill();
