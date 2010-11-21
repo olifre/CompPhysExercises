@@ -29,10 +29,13 @@ int main(int argc, char **argv) {
   
   do {
     do {
-      randz1=(2.0*random()/(RAND_MAX))-1;
-      randz2=(2.0*random()/(RAND_MAX))-1;
+      randz1=(6.0*random()/(RAND_MAX))-2;
+      randz2=(1.0*random()/(RAND_MAX));
+      //std::cout << randz1 << "\t" << randz2 << std::endl;
     } while (randz2 > exp(-1./2.*(randz1-1)*(randz1-1)));
-	
+    
+    //std::cout << "taken" << std::endl;
+    
     f2 << randz1 << "\t" << randz2 << std::endl;
 
     tree->Fill();
