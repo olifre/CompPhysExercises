@@ -1,0 +1,7 @@
+find_package(Qt4 REQUIRED) # find and setup Qt4 for this project
+
+add_executable(mygldemo mygldemo.cpp)
+
+target_link_libraries(mygldemo GL GLU glut)
+
+install(TARGETS mygldemo DESTINATION bin)

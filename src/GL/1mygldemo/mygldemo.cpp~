@@ -1,0 +1,18 @@
+#include <iostream>
+#include <fstream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+#include <math.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <GL/glut.h>
+
+void display(void) {
+
+}
+
+int main(int argc, char **argv) {
+  
+  return 0;
+}
