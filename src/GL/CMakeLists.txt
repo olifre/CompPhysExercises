@@ -1,2 +1,6 @@
 add_subdirectory(1mygldemo)
-add_subdirectory(2myqttest)
+#add_subdirectory(2myqttest)
+add_subdirectory(3mygldemo2)
+add_subdirectory(4mysdltest)
+add_subdirectory(5sdlising)
+add_subdirectory(6mycalcpi)

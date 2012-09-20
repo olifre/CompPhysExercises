@@ -100,7 +100,8 @@ int main(int argc, char **argv) {
   timespec unusedPeriod;
 
   srandom(1);
-  
+    
+  // Start Ising: 
   double T=1;
   randLattice(lattice);
 
@@ -109,7 +110,7 @@ int main(int argc, char **argv) {
       nanosleep(&sleepPeriod, &unusedPeriod);
       system("clear");
       std::cout << "Iteration: " << k << std::endl;
-      printLattice(lattice);
+      printLattice(lattice);      
     }
     flipSpinR(lattice,&T,k);
     if (k%printstep==0) 
