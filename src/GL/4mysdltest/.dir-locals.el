@@ -1,0 +1,5 @@
+((nil . ((indent-tabs-mode . t)))
+ (c++-mode . ((indent-tabs-mode . t)
+	      (compile-command . "make -C ../../../build -j 3 install")))
+ ((c-mode . ((indent-tabs-mode . t)
+	     (compile-command . "make -C ../../../build -j 3 install")))))
